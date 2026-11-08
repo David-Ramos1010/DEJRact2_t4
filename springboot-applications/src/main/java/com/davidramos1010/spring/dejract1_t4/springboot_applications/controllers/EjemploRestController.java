@@ -5,13 +5,15 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController //método handler REST
+@RequestMapping ("/api") //prefijo de la ruta
 public class EjemploRestController {
 
-    @GetMapping("/detalles_info2")
+    @GetMapping(path = "/detalles_info2") //ruta del método handler
 
     public Map<String, Object> detalles_info2(){
         Map<String, Object> respuesta = new HashMap<>();

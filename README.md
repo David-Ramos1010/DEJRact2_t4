@@ -1,24 +1,37 @@
-# 1. Act1. Introducción a Spring Boot.
-## Se configuro mi entorno de desarrollo para Java y Spring Boot, creé mi primer proyecto desde Spring Initializr, desarrollé mis primeros controladores para atender peticiones web, y lo desplegue corriendo en el VPS y en mi equipo.
+# 2. Act2. Spring MVC
+## Comprender el patrón MVC en Spring Boot usando Thymeleaf para renderizar vistas del lado del servidor, estructurar datos con clases DTO, manejar parámetros de distintas formas (@RequestParam, @PathVariable, @ModelAttribute), configurar valores externos con @value, y probar peticiones POST con Postman.
 ***
 #### Elaborado por: David Efraín José Ramos NL 19
 ***
 ### Preguntas de la fase tres:
-##### a) ¿Qué es un @Controller o @RestController en Spring Boot, y qué diferencia hay entre ambos?
-El @Controller le indica al sistema que es una clase de tipo controlador. Un controlador se define usando algo que se conoce como anotaciones también va a manejar las rutas mediante algo llamado request mapping que es el método con que el controlador va a manejar esas solicitudes entonces recibe los datos de las solicitudes http y lo hace capturando los datos desde una URL que sería el cuerpo de esa solicitud y luego le devuelve una respuesta al elemento que hace la solicitud y esta respuesta que manda ese controlador puede ser un archivo de tipo json o xml o tratándose de página web html eso va  depender de los requisitos de eh Y la configuración que hagamos.
+##### a) ¿Qué es el patrón MVC y cómo se ve reflejado en tu proyecto (qué parte es el Modelo, cuál la Vista y cuál el Controlador)?
+El patrón MVC o Modelo Vista controlador es una propuesta de arquitectura del software utilizada para separar el código por sus distintas responsabilidades, manteniendo distintas capas que se encargan de hacer una tarea muy concreta, lo que ofrece beneficios diversos.
 
-Un @RestController es una anotación que se utiliza para definir un controlador que maneja solicitudes http y que produce respuestas directamente pero en formato JSON o XML.
+Como su nombre lo indica esta se divide en tres componentes distintos:
 
-Ejemplo del video:
+1. Modelo (datos): El trabajo del modelo es simplemente administrar los datos. Ya sea que los datos provengan de una base de datos, una API o un objeto JSON, el modelo es responsable de administrarlos.
+2. Vista (UI): El trabajo de la vista es decidir qué verá el usuario en su pantalla y cómo.
+3. Controlador (Cerebro): La responsabilidad del controlador es extraer, modificar y proporcionar datos al usuario. Esencialmente, el controlador es el enlace entre  y el modelo.
+
+En mi proyecto se ve así:
 
 ```java
-    import org.springframework.stereotype.Controller;
-    @Controller
+@Controller //<- Controlador (Cerebro)
+public class EjemploController {
+
+    @GetMapping("/detalles_info")
+
+    public String info(Map<String, Object> modelo){ // <- Modelo(datos)
+        modelo.put("Titulo", "Servidor en linea");
+        modelo.put("Servidor", "PrograWeb");
+        modelo.put("Ip", "192.168.1.1");
+        return "detalles_info"; //<- Vista (UI)
+
+    }
+
+}
 ```
-```java
-import org.springframework.web.bind.annotation.RestController;
-@RestController //método handler REST
-```
+
 
 ##### b) ¿Qué anotación se usa para mapear una petición GET a un método, y cómo se le indica la ruta (endpoint)?
 Para mapear una petición GET a un método se utiliza la anotación "@GetMapping" y para indicar la ruta (endpoint) se especifica la URL deseada entre comillas dentro de los paréntesis de la anotación.

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.davidramos1010.spring.dejract1_t4.springboot_applications.models.Empleados;
+
 
 @RestController //método handler REST
 @RequestMapping ("/api") //prefijo de la ruta
@@ -16,10 +18,13 @@ public class EjemploRestController {
     @GetMapping(path = "/detalles_info2") //ruta del método handler
 
     public Map<String, Object> detalles_info2(){
+        Empleados empleado1 = new Empleados("Juan", "Rodriguez", "Calle 1 No 2", "Gerente",
+                                            35, 123456789, 001);
+
+
         Map<String, Object> respuesta = new HashMap<>();
-        respuesta.put("Titulo", "Servidor en linea");
-        respuesta.put("Servidor", "PrograWeb");
-        respuesta.put("Ip", "192.168.1.1");
+        respuesta.put("Empleado", "Datos Empleado");
+        respuesta.put("Información", empleado1);
         return respuesta;
 
     }

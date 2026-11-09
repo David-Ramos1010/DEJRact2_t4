@@ -28,8 +28,6 @@ public class EjemploController {
         return "detalles_info"; //<- Vista (UI)
 
     }
-
-}
 ```
 
 

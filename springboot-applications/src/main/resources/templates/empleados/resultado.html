@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Empleado guardado</title>
+</head>
+<body>
+    <h1>Empleado guardado correctamente</h1>
+    <ul>
+        <li><strong>ID asignado:</strong> <span th:text="${empleado.id}"></span></li>
+        <li><strong>Nombre:</strong> <span th:text="${empleado.nombre}"></span></li>
+        <li><strong>Puesto:</strong> <span th:text="${empleado.puesto}"></span></li>
+        <li><strong>Edad:</strong> <span th:text="${empleado.edad}"></span></li>
+    </ul>
+    <a th:href="@{/empleados}">Ver lista</a> |
+    <a th:href="@{/empleados/nuevo}">Agregar otro</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo empleado</title>
+</head>
+<body>
+    <h1>Nuevo empleado</h1>
+
+    <form th:action="@{/empleados/guardar}" th:object="${empleado}" method="post">
+        <p>
+            <label>Nombre: <input type="text" th:field="*{nombre}" required></label>
+        </p>
+        <p>
+            <label>Puesto: <input type="text" th:field="*{puesto}" required></label>
+        </p>
+        <p>
+            <label>Edad: <input type="number" th:field="*{edad}" min="18" required></label>
+        </p>
+        <button type="submit">Guardar</button>
+    </form>
+
+    <p>Proyecto: <span th:text="${proyecto}"></span></p>
+    <a th:href="@{/empleados}">Volver a la lista</a>
+</body>
+</html>

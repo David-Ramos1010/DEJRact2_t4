@@ -62,7 +62,7 @@ Las clases de DTO no dependen del JPA (Java Persistence Api) a nivel de framewor
 -> Entidad
 Las entidades incluyen a anotaciones de JPA (Java Persistence Api) como el @entity.
 
-###### c) ¿Qué diferencia hay entre @ModelAttribute y @RequestBody? ¿Cuándo usarías cada uno?
+##### c) ¿Qué diferencia hay entre @ModelAttribute y @RequestBody? ¿Cuándo usarías cada uno?
 La anotación @ModelAttribute es una característica de Spring que se usa para manejar datos entre nuestros controladores y nuestras vistas específicamente en aplicaciones que usan time.
 
 Entonces qué hace anotación @ModelAttribute pues una de sus funciones es pasar datos acá a la vista desde el controlador. No importa la cantidad de controladores que tengamos @ModelAttribute va a eh manejar datos entre dichos controladores y las vistas.

@@ -62,19 +62,16 @@ Las clases de DTO no dependen del JPA (Java Persistence Api) a nivel de framewor
 -> Entidad
 Las entidades incluyen a anotaciones de JPA (Java Persistence Api) como el @entity.
 
-###### c) ¿Qué puerto usaste en tu VPS y por qué tuviste que definirlo manualmente en vez de dejar el que viene por defecto?
-En el local use el puerto 8080, pero supongo que en VPS se tiene que cambiar porque vamos a crear diversos proyectos. En el video tuvieron un problema al correr su programa porque el puerto '8080' estaba ocupado. Es facil cambiarlo desde 'aplication.properties'.
+###### c) ¿Qué diferencia hay entre @ModelAttribute y @RequestBody? ¿Cuándo usarías cada uno?
+La anotación @ModelAttribute es una característica de Spring que se usa para manejar datos entre nuestros controladores y nuestras vistas específicamente en aplicaciones que usan time.
 
-Ejemplo: 
+Entonces qué hace anotación @ModelAttribute pues una de sus funciones es pasar datos acá a la vista desde el controlador. No importa la cantidad de controladores que tengamos @ModelAttribute va a eh manejar datos entre dichos controladores y las vistas.
 
-```java 
-    server.port = 8080
-```
-En mi puerto use el 8081 y lo tuve que definir manualmente desde 'aplication.properties' porque mi compañero usara el 8082, ya que el 8080 suele usarse por defecto en pruebas locales.
+La anotación @ModelAttribute se usa mucho para renderizar formularios y ese es uno de sus mayores usos.
 
 ##### d) Pega el enlace de tu repositorio de GitHub, y el link de tu proyecto ya corriendo en el VPS.
 
-Link de repositorio: https://github.com/David-Ramos1010/DEJRact1_t4
+Link de repositorio: https://github.com/David-Ramos1010/DEJRact2_t4
 
 Links del VPS:
 http://194.163.143.215:8081/detalles_info2

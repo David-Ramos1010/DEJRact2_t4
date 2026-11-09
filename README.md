@@ -69,27 +69,29 @@ Entonces qué hace anotación @ModelAttribute pues una de sus funciones es pasar
 
 La anotación @ModelAttribute se usa mucho para renderizar formularios y ese es uno de sus mayores usos.
 
+El componente @ModelAttribute por el contrario le indica a Spring que tome todo el cuerpo de la petición HTTP y lo convierta en un objeto Java. Comunmente lo usaria más para cuando este desarrollando una API que para un formulario. 
+
 ##### d) Pega el enlace de tu repositorio de GitHub, y el link de tu proyecto ya corriendo en el VPS.
 
 Link de repositorio: https://github.com/David-Ramos1010/DEJRact2_t4
 
 Links del VPS:
-http://194.163.143.215:8081/detalles_info2
-http://194.163.143.215:8081/datos
-http://194.163.143.215:8081/materias
-http://194.163.143.215:8081/saludo
+http://194.163.143.215:8083
 
 ### Imagenes:
-![primera captura](img/imagen1.png)
+![primera captura](img/img1.png)
 ***
-![segunda captura](img/imagen2.png)
+![segunda captura](img/img2.png)
 ***
-#### /detalles_info2
-![detalles_info2](img/captura1.png)
-#### /datos
-![datos](img/captura2.png)
-#### /materias
-![materias](img/captura3.png)
-#### /saludo
-![saludo](img/captura4.png)
+#### Lista (th:each)
+![datos](img/img4.png)
+#### Filtro (@RequestParam)
+![materias](img/img5.png)
+#### Detalle (@PathVariable)
+![saludo](img/img6.png)
+#### Formulario (@ModelAttribute)
+![saludo](img/img7.png)
+#### Endpoint POST probado exitosamente en Postman 
+![detalles_info2](img/img3.png)
+
 #### Elaborado por: David Efraín José Ramos NL 19
